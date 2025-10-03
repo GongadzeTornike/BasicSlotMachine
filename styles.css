@@ -1,0 +1,204 @@
+/* Background animation */
+@keyframes backgroundMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  font-family: 'Caveat', cursive; /* Fun, playful font */
+  background: url('images/ancient-greece-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  animation: backgroundMove 30s linear infinite;
+  text-align: center;
+}
+
+/* Slot Machine Container */
+.slot-machine {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  max-width: 750px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+}
+
+@media (max-width: 768px) {
+  .slot-machine {
+    padding: 20px;
+    margin: 20px;
+  }
+}
+
+/* Reels Container */
+.reels {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center the reels */
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.reel {
+  font-size: 3rem;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid gold;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .reel {
+    font-size: 2rem;
+    padding: 15px;
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.reel span {
+  position: absolute;
+  animation: spin 1s linear infinite;
+}
+
+.reel:hover {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.9);
+}
+
+/* Glowing Effect when Reels are Winning */
+.reel.winning {
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+      box-shadow: 0 0 25px 2px rgba(255, 215, 0, 1);
+  }
+  100% {
+      box-shadow: 0 0 35px 5px rgba(255, 215, 0, 1);
+  }
+}
+
+/* Spinning Animation */
+@keyframes spinReel {
+  0% {
+      transform: rotateX(0deg);
+  }
+  100% {
+      transform: rotateX(7200deg);
+  }
+}
+
+.reel.spinning {
+  animation: spinReel 2s ease-in-out forwards;
+}
+
+/* Button Hover Effects */
+button {
+  padding: 15px 25px;
+  margin: 20px 10px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(145deg, #ffb606, #ff9100);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 10px 20px;
+    margin: 15px 5px;
+    font-size: 1.2rem;
+  }
+}
+
+button:hover {
+  background-color: #ff9500;
+  box-shadow: 0 6px 15px rgba(255, 145, 0, 0.6);
+}
+
+/* Jackpot Text */
+.jackpot {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 1);
+}
+
+@media (max-width: 768px) {
+  .jackpot {
+    font-size: 1.5rem;
+  }
+}
+
+/* Win / Loss Feedback */
+#result {
+  font-size: 2rem;
+  margin-top: 30px;
+  color: #ffd700;
+  font-weight: bold;
+  text-shadow: 0 0 15px #ffb606;
+}
+
+@media (max-width: 768px) {
+  #result {
+    font-size: 1.5rem;
+  }
+}
+
+/* Audio Buttons */
+button#muteButton {
+  font-size: 2rem;
+  background-color: transparent;
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  button#muteButton {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+}
+
+button#muteButton:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+  color: black;
+}
+
+/* Bonus or Special Effects */
+.bonus {
+  color: #00ff00;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  animation: bounce 1s infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .bonus {
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-15px);
+  }
+}
