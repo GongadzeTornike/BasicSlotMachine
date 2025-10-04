@@ -16,7 +16,11 @@ const muteButton = document.getElementById("muteButton");
 const spinSound = new Audio("slotspin.mp3");
 const winSound = new Audio("cash-register-purchase-87313.mp3");
 const loseSound = new Audio("080047_lose_funny_retro_video-game-80925.mp3");
+<<<<<<< HEAD
 const freeSpinSound = new Audio("freespin.mp3");
+=======
+const freeSpinSound = new Audio("freespin.mp3"); 
+>>>>>>> 77eee2089ddd7c2ca67a6813f06b9940dd081cc6
 
 let balance = 100;
 let jackpot = 500;
